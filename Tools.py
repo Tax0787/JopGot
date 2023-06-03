@@ -1,7 +1,10 @@
 from os import system as s #system shell
 from os import chdir as cd #can use cd
+from json import load as l #short names
+from json import load as d #short names
 '''
 i, p, o, e, v = input, print, open, exec, eval
+clear_display : 7erminal c13ar Di5p1ay C0mmand 57rin9
 
 ======================================================================= [ each classes helps ] =============================================================================
 
@@ -13,13 +16,18 @@ Shell3... hmm... see the menual to help()
 clr : c13ar 73rmina1 di5p1ay
 child_class : makin9 a chi1d c1a55 4 7yp3 Func7i0n
 error : makin9 a c1a55 E 4 3rr0r c1a55
+gets : G37 J50N M3cr0
+sets : 537 J50N M3cr0
 
 ============================================================================================================================================================================
 
 WARNING : this module use the match-case If you'r python Version is Under the 3.9, then USE the tax0787's TaxLib310PlugIn (https://github.com/Tax0787Reborn/TaxLib310PlugIn)
 '''
 i, p, o, e, v = input, print, open, exec, eval #short-names
-clr = lambda : s('clear') #clear display
+clear_display = o('clr.txt').read() #setting default in clr.txt
+gets = lambda f : l(o(f)) #Get JSON Mecro
+sets = lambda f,x : d(x,o(f,'w'))  #Set JSON Mecro
+clr = lambda : s(clear_display) #clear display
 child_class = lambda name, mom : type(name, (mom,), {}) #type(NAME, TUPLE-__SUPER__(), __DICT__) to make class, type function is meta-class
 E = child_class('E',Exception) #make an 'E'rror class
 error = lambda name : child_class(name, E) #make error-class by E
